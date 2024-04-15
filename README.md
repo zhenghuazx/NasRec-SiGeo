@@ -19,6 +19,18 @@ The SiGeo proxy `compute_zero_shot_metric` is defined in "nasrec/utils/train_uti
 | ![](doc/criteo-logloss-gpu.png "sub-one-shot NAS") | ![](doc/avazu-logloss-gpu.png) | ![](doc/kdd-logloss-gpu.png) |
 
 
+| Warm-up Level | Current Training Loss | Current Training Loss | Fisher-Rao Norm | Fisher-Rao Norm | Mean Absolute Gradients | Mean Absolute Gradients |
+|---------------|:----------------------|-----------------------|-----------------|-----------------|:-----------------------:|-------------------------|
+| Warm-up Level | Spearman              | Kendall               | Spearman        | Kendall         |        Spearman         | Kendall                 |
+| 0%            | 0.30                  | 0.21                  | -0.31           | -0.21           |          -0.48          | -0.34                   |
+| 10%           | 0.71                  | 0.52                  | -0.61           | -0.44           |          -0.54          | -0.40                   |
+| 20%           | 0.79                  | 0.61                  | -0.70           | -0.52           |          -0.57          | -0.42                   |
+| 40%           | 0.80                  | 0.61                  | -0.71           | -0.53           |          -0.58          | -0.43                   |
+| 60%           | 0.82                  | 0.63                  | -0.71           | -0.52           |          -0.58          | -0.44                   |
+| 80%           | 0.83                  | 0.64                  | -0.71           | -0.51           |          -0.58          | -0.44                   |
+| 100%          | 0.85                  | 0.66                  | -0.69           | -0.51           |          -0.59          | -0.44                   |
+
+
 ## Empirical Justification for the Theory
 The result in Section 5.2 can be reproduced by using the notebook located at `notebooks/EmpiricalJustification4Theory.ipynb`
 
