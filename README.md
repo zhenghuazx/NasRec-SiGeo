@@ -1,5 +1,5 @@
 
-# SiGeo: Sub-One-Shot NAS via Information Theory and Geometry of Loss Landscape
+# SiGeo: Sub-One-Shot NAS via Geometry of Loss Landscape
 This is the official code of our work, [**SiGeo: Sub-One-Shot NAS via Geometry of Loss Landscape**] 
 This work is based on the original [NasRec](https://github.com/facebookresearch/NasRec), a design automation for Click-Through Rate (CTR) prediction task on 
 Recommender Systems.
