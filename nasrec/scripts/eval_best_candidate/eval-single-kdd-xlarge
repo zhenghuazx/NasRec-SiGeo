@@ -1,0 +1,40 @@
+LR=0.16 # 0.1 vs 0.16
+ID=7
+gup_id=${ID}
+data=kdd
+datapath=${data}_kaggle_autoctr
+score=1zico-0fr
+space=xlarge
+setting=0.01data # new
+# CUDA_VISIBLE_DEVICES=7
+python -u nasrec/main_train.py --root_dir ./data/${datapath}/ \
+        --net supernet-config \
+        --supernet_config ea-${data}-kaggle-${space}-best-1shot-${score}-${setting}/best_config_${ID}.json \
+        --num_epochs 1 \
+        --learning_rate ${LR} \
+        --train_batch_size 512 \
+        --wd 0 \
+        --logging_dir ./www-test/ea-${space}-best-${data}-kaggle-${score}-config-${ID}-${setting} \
+        --gpu ${gup_id} \
+        --test_interval 20000 \
+        --dataset ${data} \
+        --train_limit 134675194 \
+        --test_limit 14963910
+
+# 0 FLOPS: 1.1783 M          Params: 811.1412 M
+# 1 FLOPS: 1.1824 M          Params: 811.0582 M
+# 2 FLOPS: 1.1817 M          Params: 811.3324 M
+# 3 FLOPS: 1.1742 M          Params: 811.0624 M
+# 4 FLOPS: 1.1046 M          Params: 811.1821 M
+# 5 FLOPS: 1.1054 M          Params: 811.5725 M
+# 6 FLOPS: 1.1333 M          Params: 811.4722 M
+# 7 FLOPS: 1.1330 M          Params: 811.6664 M
+
+# 0 FLOPS: 6.3219 M          Params: 817.1587 M
+# 1 FLOPS: 7.2965 M          Params: 818.9617 M
+# 2 FLOPS: 6.3800 M          Params: 817.0640 M
+# 3 FLOPS: 6.3219 M          Params: 817.6991 M
+# 4 FLOPS: 6.3219 M          Params: 817.0503 M
+# 5 FLOPS: 6.5100 M          Params: 817.2502 M
+# 6 FLOPS: 7.8863 M          Params: 818.1912 M
+# 7 FLOPS: 7.2842 M          Params: 818.0241 M

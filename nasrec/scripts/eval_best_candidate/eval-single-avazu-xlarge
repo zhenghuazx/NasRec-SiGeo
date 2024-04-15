@@ -1,0 +1,21 @@
+LR=0.2
+ID=7
+gup_id=${ID}
+data=avazu
+datapath=${data}_kaggle_autoctr
+score=1zico-1fr
+space=xlarge
+# CUDA_VISIBLE_DEVICES=7
+python -u nasrec/main_train.py --root_dir ./data/${datapath}/ \
+        --net supernet-config \
+        --supernet_config ea-${data}-kaggle-${space}-best-1shot-${score}/best_config_${ID}.json \
+        --num_epochs 1 \
+        --learning_rate ${LR} \
+        --train_batch_size 256 \
+        --wd 0 \
+        --logging_dir ./www-test/ea-${space}-best-${data}-kaggle-${score}-config-${ID} \
+        --gpu ${gup_id} \
+        --test_interval 10000 \
+        --dataset ${data} \
+        --train_limit 36386071 \
+        --test_limit 4042896
