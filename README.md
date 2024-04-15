@@ -19,6 +19,10 @@ The SiGeo proxy `compute_zero_shot_metric` is defined in "nasrec/utils/train_uti
 | ![](doc/criteo-logloss-gpu.png "sub-one-shot NAS") | ![](doc/avazu-logloss-gpu.png) | ![](doc/kdd-logloss-gpu.png) |
 
 
+## Empirical Justification for the Theory
+The result in Section 5.2 can be reproduced by using the notebook located at `notebooks/EmpiricalJustification4Theory.ipynb`
+
+
 | Warm-up Level | Current Training Loss | Current Training Loss | Fisher-Rao Norm | Fisher-Rao Norm | Mean Absolute Gradients | Mean Absolute Gradients |
 |---------------|:----------------------|-----------------------|-----------------|-----------------|:-----------------------:|-------------------------|
 | Warm-up Level | Spearman              | Kendall               | Spearman        | Kendall         |        Spearman         | Kendall                 |
@@ -31,8 +35,7 @@ The SiGeo proxy `compute_zero_shot_metric` is defined in "nasrec/utils/train_uti
 | 100%          | 0.85                  | 0.66                  | -0.69           | -0.51           |          -0.59          | -0.44                   |
 
 
-## Empirical Justification for the Theory
-The result in Section 5.2 can be reproduced by using the notebook located at `notebooks/EmpiricalJustification4Theory.ipynb`
+
 
 ## Example for Recommender System Benchmarks (Section 5.4)
 **Step 1**: Warm up the supernet. The warm-up level can be changed by changing `train_limit` argument. For example, 
